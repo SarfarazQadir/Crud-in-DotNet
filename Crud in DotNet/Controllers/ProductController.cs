@@ -28,5 +28,23 @@ namespace Crud_in_DotNet.Controllers
             var prd  = _manicontext.tbl_product.ToList();
             return View(prd);
         }
+        public IActionResult Delete(int id)
+        {
+            var data = _manicontext.tbl_product.Find(id);
+            _manicontext.tbl_product.Remove(data);
+            _manicontext.SaveChanges();
+            return RedirectToAction("Fetch");
+        }
+        public IActionResult Update(int id)
+        {
+          return View(_manicontext.tbl_product.Find(id));
+        }
+        [HttpPost]
+        public IActionResult Update(Product prd)
+        {
+            _manicontext.tbl_product.Update(prd);
+            _manicontext.SaveChanges();
+            return RedirectToAction("Fetch");
+        }
     }
 }

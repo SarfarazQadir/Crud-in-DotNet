@@ -20,6 +20,10 @@
                 <td>@data.Price</td>
                 <td>@data.Quantity</td>
                 <td>@data.Description</td>
+                <td>
+                    <a href="@Url.Action("update","Product", new{id=@data.Id})" class="btn btn-success">UPDATE</a>
+                    <a href="@Url.Action("delete","Product", new{id=@data.Id})" class="btn btn-danger">DELETE</a>
+                </td>
             </tr>
         }
     </tbody>

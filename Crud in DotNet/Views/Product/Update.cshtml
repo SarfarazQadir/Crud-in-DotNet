@@ -1,0 +1,17 @@
+﻿
+@model Product
+
+<h1>
+    Update Product Details
+</h1>
+
+<form method="post">
+
+    <input type="hidden" value="@Model." name="Id" /><br /><br />
+    <input type="text" placeholder="Enter Product Name" name="Name" /><br /><br />
+    <input type="number" placeholder="Enter Product Price" name="Price" /><br /><br />
+    <input type="number" placeholder="Enter Product Quantity" name="Quantity" /><br /><br />
+    <input type="text" placeholder="Enter Product Description" name="Description" /><br /><br />
+    <input type="submit" class="btn btn-warning" value="Add Products" />
+
+</form>
